@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nathan Barmak | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="contact-trigger" id="contactTrigger" title="Get in touch">
+      <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+        <polyline points="22,6 12,13 2,6"></polyline>
+      </svg>
+      <div class="contact-dropdown" id="contactDropdown">
+        <p class="contact-title">Get in touch</p>
+        <a href="mailto:nbarmak.hba2027@ivey.ca" class="contact-email">nbarmak.hba2027@ivey.ca</a>
+        <a href="https://linkedin.com/in/nathan-barmak-40583a353" target="_blank" rel="noopener noreferrer" class="contact-linkedin" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#" class="nav-link active" data-tab="home">Home</a>
+      <a href="#" class="nav-link" data-tab="resume">Resume</a>
+      <a href="#" class="nav-link" data-tab="projects">Projects</a>
+      <a href="#" class="nav-link" data-tab="personal">Personal</a>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home" class="tab-content active">
+    <div class="skyline-bg"></div>
+    <div class="home-overlay"></div>
+    <div class="home-content">
+      <div class="headshot-wrapper">
+        <img src="assets/headshot.png" alt="Nathan Barmak" class="headshot">
+      </div>
+      <h1 class="name">Nathan Barmak</h1>
+      <p class="location">Toronto, Ontario, Canada</p>
+      <p class="school">HBA Candidate &middot; Ivey Business School | Western University</p>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section id="resume" class="tab-content">
+    <div class="resume-container">
+      <div class="resume-header">
+        <h2>Resume</h2>
+        <a href="assets/NathanBarmak_Resume.pdf" download class="download-btn">Download PDF</a>
+      </div>
+      <div class="resume-viewer">
+        <iframe src="assets/NathanBarmak_Resume.pdf" title="Nathan Barmak Resume"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="tab-content">
+    <div class="projects-container">
+      <h2 class="projects-heading">Projects</h2>
+      <article class="project-card">
+        <a href="https://globalcapitalmarkets.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card-thumb" aria-label="Open Global Capital Markets HQ">
+          <img src="assets/personal/capital_markets.png" alt="Global Capital Markets HQ preview" class="project-card-img">
+        </a>
+        <div class="project-card-body">
+          <h3 class="project-card-title">Global Capital Markets HQ</h3>
+          <p class="project-card-desc">A full-stack app I built and published to support investing decisions and stay current with the markets—dashboards, research, and market context in one place.</p>
+          <a href="https://globalcapitalmarkets.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card-link">Visit live site</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PERSONAL -->
+  <section id="personal" class="tab-content">
+    <div class="roadmap-wrapper">
+      <h2 class="personal-heading">My Life Beyond the Classroom</h2>
+      <div class="roadmap-scroll">
+        <div class="roadmap">
+          <div class="road-line"></div>
+
+          <div class="road-stop top">
+            <div class="stop-content" data-interest="capital-markets">
+              <img src="assets/personal/capital_markets.png" alt="Capital Markets" class="stop-img">
+              <p class="stop-label">Capital Markets</p>
+            </div>
+            <div class="stop-connector"><span class="stop-stem"></span><span class="stop-dot"></span></div>
+          </div>
+
+          <div class="road-stop bottom">
+            <div class="stop-connector"><span class="stop-dot"></span><span class="stop-stem"></span></div>
+            <div class="stop-content" data-interest="travel">
+              <img src="assets/personal/travel1.png" alt="Travel" class="stop-img">
+              <p class="stop-label">Travel</p>
+            </div>
+          </div>
+
+          <div class="road-stop top">
+            <div class="stop-content" data-interest="music">
+              <img src="assets/personal/music1.png" alt="Music" class="stop-img">
+              <p class="stop-label">Music</p>
+            </div>
+            <div class="stop-connector"><span class="stop-stem"></span><span class="stop-dot"></span></div>
+          </div>
+
+          <div class="road-stop bottom">
+            <div class="stop-connector"><span class="stop-dot"></span><span class="stop-stem"></span></div>
+            <div class="stop-content" data-interest="weightlifting">
+              <img src="assets/personal/weightlifting.jpg" alt="Weightlifting" class="stop-img">
+              <p class="stop-label">Weightlifting</p>
+            </div>
+          </div>
+
+          <div class="road-stop top">
+            <div class="stop-content" data-interest="f1">
+              <img src="assets/personal/f1_icon.png" alt="Formula 1" class="stop-img">
+              <p class="stop-label">Formula 1</p>
+            </div>
+            <div class="stop-connector"><span class="stop-stem"></span><span class="stop-dot"></span></div>
+          </div>
+
+          <div class="road-stop bottom">
+            <div class="stop-connector"><span class="stop-dot"></span><span class="stop-stem"></span></div>
+            <div class="stop-content" data-interest="golf">
+              <img src="assets/personal/golf1.png" alt="Golf" class="stop-img">
+              <p class="stop-label">Golf</p>
+            </div>
+          </div>
+
+          <div class="road-stop top">
+            <div class="stop-content" data-interest="hockey">
+              <img src="assets/personal/hockey1.png" alt="Hockey" class="stop-img">
+              <p class="stop-label">Hockey</p>
+            </div>
+            <div class="stop-connector"><span class="stop-stem"></span><span class="stop-dot"></span></div>
+          </div>
+
+          <div class="road-stop bottom">
+            <div class="stop-connector"><span class="stop-dot"></span><span class="stop-stem"></span></div>
+            <div class="stop-content" data-interest="food">
+              <img src="assets/personal/food2.png" alt="Food" class="stop-img">
+              <p class="stop-label">Food</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="scroll-hint">scroll &rarr;</div>
+    </div>
+
+    <!-- Expanded cards -->
+    <div class="expanded-card" id="card-hockey">
+      <button class="card-close">&times;</button>
+      <div class="card-gallery duo">
+        <img src="assets/personal/hockey1.png" alt="Championship celebration" class="card-img">
+        <img src="assets/personal/hockey2.jpg" alt="Toronto Maple Leafs playoff game" class="card-img">
+      </div>
+      <h3>Hockey</h3>
+      <p>I’ve been playing hockey since I was nine years old. My final year of rep ended on the highest note possible, winning the finals during my last year of high school. Since then I’ve kept playing through university with LUG, and when I’m not on the ice I’m watching. I’m a die-hard Toronto Maple Leafs fan, and despite the years of disappointment, I wouldn’t trade the loyalty for anything.</p>
+    </div>
+
+    <div class="expanded-card" id="card-travel">
+      <button class="card-close">&times;</button>
+      <div class="card-gallery trio">
+        <img src="assets/personal/travel1.png" alt="The Acropolis, Athens" class="card-img">
+        <img src="assets/personal/travel2.png" alt="Sunset in Mykonos" class="card-img">
+        <img src="assets/personal/travel3.png" alt="Florence Cathedral" class="card-img">
+      </div>
+      <h3>Travel</h3>
+      <p>This past spring I spent a month backpacking through Europe with three of my closest friends. From the streets of Florence to sunsets in Mykonos and the Acropolis in Athens. Travelling is how I recharge and gain perspective. I’m already looking ahead to explore more of Europe, Southeast Asia, and North Africa.</p>
+    </div>
+
+    <div class="expanded-card" id="card-music">
+      <button class="card-close">&times;</button>
+      <div class="card-gallery trio">
+        <img src="assets/personal/music1.png" alt="John Summit concert" class="card-img">
+        <img src="assets/personal/music2.png" alt="Concert with friends" class="card-img">
+        <img src="assets/personal/music3.png" alt="Travis Scott concert" class="card-img">
+      </div>
+      <h3>Music</h3>
+      <p>My love for music spans everything from hip-hop and classic rock to jazz and country, and there's always something on. Live shows are how I connect with it best; Travis Scott and John Summit are the highlights so far. That passion pushed me to pick up the guitar in the summer of 2025, and I'm still building my skills. Check out my Spotify <a href="https://open.spotify.com/user/vp1rgxp4syenf4ive88yem62l" target="_blank" rel="noopener noreferrer">@BARM</a> for what I'm listening to.</p>
+    </div>
+
+    <div class="expanded-card" id="card-f1">
+      <button class="card-close">&times;</button>
+      <div class="card-gallery single">
+        <img src="assets/personal/f1_1.png" alt="Young Nathan in Ferrari race suit" class="card-img">
+      </div>
+      <h3>Formula 1</h3>
+      <p>I’ve been a fan of F1 and racing for as long as I can remember. A proud member of the Tifosi, my passion for the sport was inherited from my dad. Some of my earliest memories are watching races together and dreaming about the grid. That love hasn’t faded one bit.</p>
+    </div>
+
+    <div class="expanded-card" id="card-weightlifting">
+      <button class="card-close">&times;</button>
+      <div class="card-gallery single">
+        <img src="assets/personal/weightlifting.jpg" alt="Weightlifting" class="card-img">
+      </div>
+      <h3>Weightlifting</h3>
+      <p>I picked up weightlifting during COVID as a way to stay active, but it wasn’t until university that I really committed to it. Once I started feeling the positive effects on both my physical and mental health, it became a non-negotiable part of my routine. The gym is where I clear my head, push my limits, and reset for whatever comes next.</p>
+    </div>
+
+    <div class="expanded-card" id="card-golf">
+      <button class="card-close">&times;</button>
+      <div class="card-gallery single">
+        <img src="assets/personal/golf1.png" alt="Golf with friends" class="card-img">
+      </div>
+      <h3>Golf</h3>
+      <p>I picked up golf last summer and instantly fell in love with the sport. There’s something about being out on the course with friends that just clicks. Unfortunately, it’s already made a serious dent in my wallet  - but I wouldn’t have it any other way.</p>
+    </div>
+
+    <div class="expanded-card" id="card-capital-markets">
+      <button class="card-close">&times;</button>
+      <div class="card-gallery single">
+        <img src="assets/personal/capital_markets.png" alt="Stock market charts" class="card-img">
+      </div>
+      <h3>Capital Markets</h3>
+      <p>I've been actively managing my own investment portfolio since I was 15. What started as curiosity quickly turned into a genuine passion for the markets. I currently hold positions in over 13 different public equities and have generated unrealized returns of over 125% since opening my account in 2020. Staying on top of market trends and doing my own research is something I genuinely enjoy, and it's shaped the way I think about business and value creation.</p>
+    </div>
+
+    <div class="expanded-card" id="card-food">
+      <button class="card-close">&times;</button>
+      <div class="card-gallery trio">
+        <img src="assets/personal/food1.png" alt="BBQ outdoors" class="card-img">
+        <img src="assets/personal/food2.png" alt="Sandwiches with friends" class="card-img">
+        <img src="assets/personal/food3.png" alt="Italian dinner spread" class="card-img">
+      </div>
+      <h3>Food</h3>
+      <p>Food is one of my favourite ways to explore the world without leaving town. I'm always hunting for new restaurants, but I also love getting in the kitchen myself. Since starting university, I've made it a goal to cook a new meal every two weeks just to diversify my palate. From Italian pastas and slow-smoked BBQ to street food I've come across while travelling, I'm drawn to anything that tells a story through flavour.</p>
+    </div>
+  </section>
+
+  <div class="card-overlay" id="cardOverlay"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>
