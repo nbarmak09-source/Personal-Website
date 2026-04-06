@@ -391,19 +391,22 @@ body {
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #0d0d0d;
 }
 
 .project-card-img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
   object-position: center;
   display: block;
   transition: transform 0.35s ease;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .project-card-thumb:hover .project-card-img {
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 
 .project-card-body {
@@ -790,6 +793,11 @@ body {
 
 .card-gallery.single .card-img {
   height: 220px;
+}
+
+#card-f1 .card-img {
+  height: 380px;
+  object-position: center 10%;
 }
 
 .card-gallery.trio .card-img:first-child {
