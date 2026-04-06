@@ -11,7 +11,15 @@
 </head>
 <body>
 
-  <nav class="navbar">
+  <nav class="navbar" id="navbar" aria-label="Main">
+    <a href="#" class="nav-brand" id="navBrand" data-tab="home" aria-label="Home">NB</a>
+    <div class="nav-links" id="navLinks">
+      <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
+      <a href="#" class="nav-link active" data-tab="home">Home</a>
+      <a href="#" class="nav-link" data-tab="resume">Resume</a>
+      <a href="#" class="nav-link" data-tab="projects">Projects</a>
+      <a href="#" class="nav-link" data-tab="personal">Personal</a>
+    </div>
     <div class="contact-trigger" id="contactTrigger" title="Get in touch">
       <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -26,18 +34,13 @@
         </a>
       </div>
     </div>
-    <div class="nav-links">
-      <a href="#" class="nav-link active" data-tab="home">Home</a>
-      <a href="#" class="nav-link" data-tab="resume">Resume</a>
-      <a href="#" class="nav-link" data-tab="projects">Projects</a>
-      <a href="#" class="nav-link" data-tab="personal">Personal</a>
-    </div>
   </nav>
 
   <!-- HOME -->
   <section id="home" class="tab-content active">
     <div class="skyline-bg"></div>
     <div class="home-overlay"></div>
+    <canvas id="particleCanvas" class="particle-canvas"></canvas>
     <div class="home-content">
       <div class="headshot-wrapper">
         <img src="assets/headshot.png" alt="Nathan Barmak" class="headshot">
@@ -45,6 +48,7 @@
       <h1 class="name">Nathan Barmak</h1>
       <p class="location">Toronto, Ontario, Canada</p>
       <p class="school">HBA Candidate &middot; Ivey Business School | Western University</p>
+      <p class="typewriter-line"><span id="typewriter"></span><span class="typewriter-cursor">|</span></p>
     </div>
   </section>
 
@@ -54,6 +58,13 @@
       <div class="resume-header">
         <h2>Resume</h2>
         <a href="assets/NathanBarmak_Resume.pdf" download class="download-btn">Download PDF</a>
+      </div>
+      <div class="skill-tags">
+        <span class="skill-tag">Financial Modeling</span>
+        <span class="skill-tag">Equity Research</span>
+        <span class="skill-tag">Valuation</span>
+        <span class="skill-tag">Excel</span>
+        <span class="skill-tag">Cursor</span>
       </div>
       <div class="resume-viewer">
         <iframe src="assets/NathanBarmak_Resume.pdf" title="Nathan Barmak Resume"></iframe>
@@ -89,78 +100,150 @@
   <!-- PERSONAL -->
   <section id="personal" class="tab-content">
     <div class="roadmap-wrapper">
-      <h2 class="personal-heading">My Life Beyond the Classroom</h2>
+      <h2 class="personal-heading">
+        <span class="personal-heading-kicker" aria-hidden="true"></span>
+        <span class="personal-heading-text">My Life <span class="personal-heading-accent">Beyond</span> the Classroom</span>
+      </h2>
+
+      <div class="roadmap-line-bleed" aria-hidden="true">
+        <div class="road-line-wrap">
+          <svg class="road-line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 56" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="roadWaveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="rgba(91, 154, 139, 0.55)" />
+                <stop offset="100%" stop-color="rgba(91, 154, 139, 0.55)" />
+              </linearGradient>
+            </defs>
+            <path class="road-line-path-glow" fill="none" stroke="rgba(91, 154, 139, 0.18)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" d="M0,28 C55,4 145,52 200,28 C255,4 345,52 400,28 C455,4 545,52 600,28 C655,4 745,52 800,28 M800,28 C855,4 945,52 1000,28 C1055,4 1145,52 1200,28 C1255,4 1345,52 1400,28 C1455,4 1545,52 1600,28" />
+            <path class="road-line-path" fill="none" stroke="url(#roadWaveGrad)" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" d="M0,28 C55,4 145,52 200,28 C255,4 345,52 400,28 C455,4 545,52 600,28 C655,4 745,52 800,28 M800,28 C855,4 945,52 1000,28 C1055,4 1145,52 1200,28 C1255,4 1345,52 1400,28 C1455,4 1545,52 1600,28" />
+          </svg>
+        </div>
+      </div>
+
       <div class="roadmap-scroll">
         <div class="roadmap">
-          <div class="road-line"></div>
-
-          <div class="road-stop top">
-            <div class="stop-content" data-interest="capital-markets">
-              <img src="assets/personal/capital_markets.png" alt="Capital Markets" class="stop-img">
-              <p class="stop-label">Capital Markets</p>
+          <div class="roadmap-connectors">
+            <div class="road-stop top">
+              <div class="stop-connector"><span class="stop-stem"></span><span class="stop-dot"></span></div>
             </div>
-            <div class="stop-connector"><span class="stop-stem"></span><span class="stop-dot"></span></div>
-          </div>
-
-          <div class="road-stop bottom">
-            <div class="stop-connector"><span class="stop-dot"></span><span class="stop-stem"></span></div>
-            <div class="stop-content" data-interest="travel">
-              <img src="assets/personal/travel1.png" alt="Travel" class="stop-img">
-              <p class="stop-label">Travel</p>
+            <div class="road-stop bottom">
+              <div class="stop-connector"><span class="stop-dot"></span><span class="stop-stem"></span></div>
             </div>
-          </div>
-
-          <div class="road-stop top">
-            <div class="stop-content" data-interest="music">
-              <img src="assets/personal/music1.png" alt="Music" class="stop-img">
-              <p class="stop-label">Music</p>
+            <div class="road-stop top">
+              <div class="stop-connector"><span class="stop-stem"></span><span class="stop-dot"></span></div>
             </div>
-            <div class="stop-connector"><span class="stop-stem"></span><span class="stop-dot"></span></div>
-          </div>
-
-          <div class="road-stop bottom">
-            <div class="stop-connector"><span class="stop-dot"></span><span class="stop-stem"></span></div>
-            <div class="stop-content" data-interest="weightlifting">
-              <img src="assets/personal/weightlifting.jpg" alt="Weightlifting" class="stop-img">
-              <p class="stop-label">Weightlifting</p>
+            <div class="road-stop bottom">
+              <div class="stop-connector"><span class="stop-dot"></span><span class="stop-stem"></span></div>
+            </div>
+            <div class="road-stop top">
+              <div class="stop-connector"><span class="stop-stem"></span><span class="stop-dot"></span></div>
+            </div>
+            <div class="road-stop bottom">
+              <div class="stop-connector"><span class="stop-dot"></span><span class="stop-stem"></span></div>
+            </div>
+            <div class="road-stop top">
+              <div class="stop-connector"><span class="stop-stem"></span><span class="stop-dot"></span></div>
+            </div>
+            <div class="road-stop bottom">
+              <div class="stop-connector"><span class="stop-dot"></span><span class="stop-stem"></span></div>
             </div>
           </div>
 
-          <div class="road-stop top">
-            <div class="stop-content" data-interest="f1">
-              <img src="assets/personal/f1_icon.png" alt="Formula 1" class="stop-img">
-              <p class="stop-label">Formula 1</p>
+          <div class="roadmap-contents">
+            <div class="road-stop top">
+              <div class="stop-content" data-interest="capital-markets">
+                <img src="assets/personal/capital_markets.png" alt="Capital Markets" class="stop-img">
+                <p class="stop-label">Capital Markets</p>
+              </div>
             </div>
-            <div class="stop-connector"><span class="stop-stem"></span><span class="stop-dot"></span></div>
-          </div>
-
-          <div class="road-stop bottom">
-            <div class="stop-connector"><span class="stop-dot"></span><span class="stop-stem"></span></div>
-            <div class="stop-content" data-interest="golf">
-              <img src="assets/personal/golf1.png" alt="Golf" class="stop-img">
-              <p class="stop-label">Golf</p>
+            <div class="road-stop bottom">
+              <div class="stop-content" data-interest="travel">
+                <img src="assets/personal/travel1.png" alt="Travel" class="stop-img">
+                <p class="stop-label">Travel</p>
+              </div>
+            </div>
+            <div class="road-stop top">
+              <div class="stop-content" data-interest="music">
+                <img src="assets/personal/music1.png" alt="Music" class="stop-img">
+                <p class="stop-label">Music</p>
+              </div>
+            </div>
+            <div class="road-stop bottom">
+              <div class="stop-content" data-interest="weightlifting">
+                <img src="assets/personal/weightlifting.jpg" alt="Weightlifting" class="stop-img">
+                <p class="stop-label">Weightlifting</p>
+              </div>
+            </div>
+            <div class="road-stop top">
+              <div class="stop-content" data-interest="f1">
+                <img src="assets/personal/f1_icon.png" alt="Formula 1" class="stop-img">
+                <p class="stop-label">Formula 1</p>
+              </div>
+            </div>
+            <div class="road-stop bottom">
+              <div class="stop-content" data-interest="golf">
+                <img src="assets/personal/golf1.png" alt="Golf" class="stop-img">
+                <p class="stop-label">Golf</p>
+              </div>
+            </div>
+            <div class="road-stop top">
+              <div class="stop-content" data-interest="hockey">
+                <img src="assets/personal/hockey1.png" alt="Hockey" class="stop-img">
+                <p class="stop-label">Hockey</p>
+              </div>
+            </div>
+            <div class="road-stop bottom">
+              <div class="stop-content" data-interest="food">
+                <img src="assets/personal/food2.png" alt="Food" class="stop-img">
+                <p class="stop-label">Food</p>
+              </div>
             </div>
           </div>
-
-          <div class="road-stop top">
-            <div class="stop-content" data-interest="hockey">
-              <img src="assets/personal/hockey1.png" alt="Hockey" class="stop-img">
-              <p class="stop-label">Hockey</p>
-            </div>
-            <div class="stop-connector"><span class="stop-stem"></span><span class="stop-dot"></span></div>
-          </div>
-
-          <div class="road-stop bottom">
-            <div class="stop-connector"><span class="stop-dot"></span><span class="stop-stem"></span></div>
-            <div class="stop-content" data-interest="food">
-              <img src="assets/personal/food2.png" alt="Food" class="stop-img">
-              <p class="stop-label">Food</p>
-            </div>
-          </div>
-
         </div>
       </div>
       <div class="scroll-hint">scroll &rarr;</div>
+    </div>
+
+    <div class="streaming-widgets-row">
+      <div class="spotify-widget">
+        <div class="spotify-widget-inner">
+          <div class="spotify-left">
+            <svg class="spotify-logo-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+            </svg>
+            <div class="spotify-equalizer" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="spotify-right">
+            <p class="spotify-label">Find me on Spotify</p>
+            <p class="spotify-handle">@BARM</p>
+          </div>
+          <a href="https://open.spotify.com/user/vp1rgxp4syenf4ive88yem62l" target="_blank" rel="noopener noreferrer" class="spotify-open-btn" aria-label="Open Spotify profile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="soundcloud-widget">
+        <div class="soundcloud-widget-inner">
+          <div class="soundcloud-left">
+            <svg class="soundcloud-logo-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M4 14h2v4H4v-4zm4-3h2v7H8v-7zm4-4h2v11h-2V7zm4-2h2v13h-2V5zm4 3h2v10h-2V8z"/>
+            </svg>
+            <div class="soundcloud-equalizer" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="soundcloud-right">
+            <p class="soundcloud-label">Find me on SoundCloud</p>
+            <p class="soundcloud-handle">user-899774886</p>
+          </div>
+          <a href="https://soundcloud.com/user-899774886" target="_blank" rel="noopener noreferrer" class="soundcloud-open-btn" aria-label="Open SoundCloud profile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+        </div>
+      </div>
     </div>
 
     <!-- Expanded cards -->
@@ -245,6 +328,7 @@
   </section>
 
   <div class="card-overlay" id="cardOverlay"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
   <script src="js/main.js"></script>
 </body>
 </html>
