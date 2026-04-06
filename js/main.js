@@ -162,22 +162,21 @@ document.addEventListener('DOMContentLoaded', () => {
     let stars = [];
 
     function pickRgb() {
-      const c = THEME_RGB[Math.floor(Math.random() * THEME_RGB.length)];
-      return c;
+      return THEME_RGB[Math.floor(Math.random() * THEME_RGB.length)];
     }
 
     function makeStars(width, height) {
       const list = [];
-      const n = 64;
+      const n = 72;
       for (let i = 0; i < n; i++) {
         const rgb = pickRgb();
         list.push({
           x: Math.random() * width,
-          y: Math.random() * (height + height * 0.4) - height * 0.35,
-          vy: Math.random() * 0.95 + 0.28,
-          vx: (Math.random() - 0.5) * 0.35,
-          arm: Math.random() * 1.35 + 0.4,
-          opacity: Math.random() * 0.28 + 0.1,
+          y: Math.random() * (height + height * 0.45) - height * 0.4,
+          vy: Math.random() * 1.05 + 0.32,
+          vx: (Math.random() - 0.5) * 0.42,
+          arm: Math.random() * 1.45 + 0.45,
+          opacity: Math.random() * 0.22 + 0.14,
           rgb,
         });
       }
@@ -199,9 +198,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function drawStar(s) {
       const [r, g, b] = s.rgb;
-      ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${s.opacity})`;
-      ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${s.opacity * 0.9})`;
-      ctx.lineWidth = 0.55;
+      const alpha = Math.min(0.52, s.opacity);
+      ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
+      ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha * 0.92})`;
+      ctx.lineWidth = 0.6;
       const a = s.arm;
       ctx.beginPath();
       ctx.moveTo(s.x - a, s.y);
@@ -220,16 +220,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!reduceMotion) {
           s.y += s.vy;
           s.x += s.vx;
-          if (s.y > h + 12) {
-            s.y = -8 - Math.random() * h * 0.25;
+          if (s.y > h + 14) {
+            s.y = -10 - Math.random() * h * 0.3;
             s.x = Math.random() * w;
-            s.vy = Math.random() * 0.95 + 0.28;
-            s.vx = (Math.random() - 0.5) * 0.35;
+            s.vy = Math.random() * 1.05 + 0.32;
+            s.vx = (Math.random() - 0.5) * 0.42;
             s.rgb = pickRgb();
-            s.opacity = Math.random() * 0.28 + 0.1;
+            s.opacity = Math.random() * 0.22 + 0.14;
+            s.arm = Math.random() * 1.45 + 0.45;
           }
-          if (s.x < -5) s.x = w + 5;
-          if (s.x > w + 5) s.x = -5;
+          if (s.x < -8) s.x = w + 8;
+          if (s.x > w + 8) s.x = -8;
         }
         drawStar(s);
       });
